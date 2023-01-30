@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './components/question.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -27,13 +29,17 @@ class myAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext contextsha) {
-    var questions = ["what's your name", "whats the name of your first pet"];
+    var questions = [
+      "what's your name",
+      "whats the name of your first pet",
+      "do you know how to add states"
+    ];
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(title: Text("my app")),
         body: Column(
           children: [
-            Text(questions[currentQuestionIndex]),
+            Question(questions[currentQuestionIndex]),
             ElevatedButton(
                 onPressed: AnswerQuestion, child: Text("answer question 1")),
             ElevatedButton(
